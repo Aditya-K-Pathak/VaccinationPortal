@@ -1,0 +1,37 @@
+############ Admin Database Schema ################
+
+{
+    admin: password
+}
+
+############ User Database Schema ################
+
+{
+    "username:password" :{
+        "name": "Name",
+        "VaccinationStatus": True or False,
+        "Date": [
+            Date of Vaccination
+        ],
+        "VaccineName": Vaccine Name,
+        "Vaccination Location": Location,
+        "Address": User's Address,
+        "Email": User's Email
+    }
+}
+
+####### Vaccination Center Database Schema ########
+
+{
+    Center Code:{
+        Hospitals Name: Name,
+        Location: Hospital's Address,
+        Vaccine Name: Vaccine Name,
+        Available Dose: Available Dose,
+        Opening Time: Time,
+        Closing Time: Time,
+        Available Slots{
+            Date: Slots
+        }
+    }
+}
