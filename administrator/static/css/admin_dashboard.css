@@ -1,0 +1,52 @@
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+#navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid white 1px;
+}
+
+#content .hospital-detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#content .hospital-detail:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(319deg, rgba(2,0,36,1) 0%, rgba(3,3,33,1) 99%);
+}
+
+#content .hospital-detail .detail {
+    width: 70%;
+}
+
+#content .hospital-detail .buttons {
+    min-width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#content .hospital-detail .buttons a button{
+    margin: 10%;
+    width: 70px;
+    cursor: pointer;
+}
+
+#content .hospital-detail .detail div {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

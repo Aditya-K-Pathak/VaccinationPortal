@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/user_index.css' %}">
+</head>
+<body style="background-image: url({% static 'images/vaccine_bg.jpg' %});">
+    <div id="main">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <h1>Login</h1>
+            {{form}}
+            <p>New User <a href="./register">Sign Up.</a></p>
+            <input onclick="set_user_detail()" type="submit">
+        </form>
+    </div>
+</body>
+<script src="{% static 'js/script.js' %}"></script>
+</html>

@@ -1,0 +1,38 @@
+html, body{
+    height: 100vh;
+    background-size: 100%;
+}
+body, #main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body form{
+    width: 240%;
+    display: flex;
+    padding: 30%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: solid white 1px;
+    backdrop-filter: blur(8px);
+}
+
+body form input{
+    margin: 5%;
+}
+
+body form input[type='text'],
+body form input[type='password'],
+body form input[type='email']{
+    width: 80%;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: larger;
+    border-bottom: solid black 1px;
+    background-color: transparent;
+}

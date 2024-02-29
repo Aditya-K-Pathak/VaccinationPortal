@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/user_dashboard.css' %}">
+</head>
+<body>
+    <div id="main">
+        <div id="navbar">
+            <h3>
+                {{name}}
+            </h3>
+            <h3>
+                User Dashboard
+            </h3>
+            <h3>
+                <a href="./" onclick="localStorage.clear()" style="text-decoration: none;color: white;cursor: pointer;">Logout</a>
+            </h3>
+        </div>
+        <div id="main-main">
+            <h1>
+                Hi! {{name}}
+            </h1>
+            <hr>
+            <h2>
+
+            </h2>
+        </div>
+        <div id="card">
+            <h2>
+                <div id="name">
+                    {{name}} | {% if VaccinationStatus == False %}False{% else %}True{%endif%}
+                </div>
+                <hr>
+                <h3>
+                    E-Mail: {{EMail}}
+                </h3>
+                <h3>
+                    Address: {{Address}}
+                </h3>
+                {% if VaccinationStatus == True %}
+                    <h3>
+                        Vaccinated with: {{VaccineName}}
+                    </h3>
+                    <h3>
+                        Vaccinated on: {{ Date.0 }}
+                    </h3>
+                    <h3>
+                        Vaccinated at Center: {{ VaccinationLocation }}
+                    </h3>
+                {% endif %}
+            </h2>
+        </div>
+        <div id="details">
+            {% if VaccinationStatus == False %}
+        Dear {{name}}, <br><br>
+        We're delighted to welcome you, especially knowing your awareness of the challenges posed by COVID-19. Your understanding of the pandemic's complexities is vital, reflecting your commitment to safety and community well-being. In these uncertain times, your informed approach sets a positive example, guiding us through the challenges with wisdom and care. Your awareness not only protects yourself but also contributes to our collective efforts in combating the virus. Thank you for your proactive stance and dedication to staying informed. Together, we'll navigate through these challenges with resilience and unity.
+            <br><br>
+        Warm regards,<br>
+        Government of INDIA
+        {% else %}
+        Dear {{name}},
+            <br><br>
+        We're thrilled to welcome you, particularly knowing you've taken the vital step of getting vaccinated against COVID-19. Your decision to get vaccinated demonstrates a profound commitment to public health and community well-being. By getting vaccinated, you're not only protecting yourself but also contributing to the collective effort to curb the spread of the virus. Your proactive stance is commendable and sets a positive example for others to follow. Thank you for prioritizing health and safety, and for playing a crucial role in our shared journey towards overcoming this pandemic. Together, we'll emerge stronger and more resilient.
+            <br><br>
+        Warm regards,<br>
+        Government of INDIA
+        {%endif%}
+        </div>
+        <br>
+        <div id="date-container">
+            {% if VaccinationStatus == False %}
+            {% for date in dates %}
+                <div class="date">
+                    <p>{{date}}</p>
+                    <div class="code">
+                        {% for codes, detail in center.items %}
+                                <div class="detail">
+                                    <div>
+                                        <p>{{codes}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{detail.Name}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{detail.VaccineName}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{detail.Location}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{detail.OpeningTime}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{detail.ClosingTime}}</p>
+                                    </div>
+                                    <div>
+                                        <button onclick="book_slot(this)">Book Slot</button>
+                                    </div>
+                                </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- {{center}} -->
+            {% endif %}
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit">
+        </form>
+</body>
+<script src="{% static 'js/user_dashboard.js' %}"></script>
+</html>

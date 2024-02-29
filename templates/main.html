@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination Portal</title>
+    <style>
+        html, body{
+            height: 100vh;
+            color: white;
+            background-color: black;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        body, #main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            flex-direction: column;
+        }
+        #main a div, #main a{
+            margin: 100px;
+            height: 50%;
+            width: 60%;
+        }
+        #main a {
+            font-size: larger;
+            cursor: pointer;
+            border: solid white 1px;
+        }
+        #main a:hover{
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vaccination Portal</h1>
+    <div id="main">
+        <a href="administrator">
+            <div class="card">
+                Admin
+            </div>
+        </a>
+        <a href="user">
+            <div class="card">
+                User
+            </div>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+html, body{
+    height: 100vh;
+    color: white;
+    background-color: black;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body form{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+body form input{
+    text-align: center;
+    margin: 5%;
+}
+body form input[type='text']{
+    border: none;
+    outline: none;
+    width: 80%;
+    color: white;
+    background-color: black;
+    border-bottom: solid white 1px;
+}

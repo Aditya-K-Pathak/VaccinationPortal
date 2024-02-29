@@ -1,0 +1,71 @@
+html, body{
+    height: 100vh;
+    color: white;
+    background-color: black;
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#navbar{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    border-bottom: solid white 1px;
+}
+#main-main{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#card{
+    width: 70%;
+    border: solid white 1px;
+}
+#details{
+    width: 70%;
+    margin-top: 5%;
+    text-align: justify;
+}
+#date-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#date-container .date{
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid white 1px;
+}
+#date-container .code{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#date-container .code .detail{
+    display: flex;
+    justify-content: space-evenly;
+}
+#date-container .code .detail div{
+    width:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main form{
+    visibility: hidden;
+}

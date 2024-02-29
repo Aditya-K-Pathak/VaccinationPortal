@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registeration</title>
+    <link rel="stylesheet" href="{% static 'css/index1.css' %}">
+  </head>
+  <body>
+    <div id="content">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Admin</h1>
+        {{ form }}
+        <input onclick="cache()" type="submit" id="submit">
+      </form>
+    </div>
+  </body>
+  <script src="{% static 'js/admin_script.js' %}"></script>
+</html>

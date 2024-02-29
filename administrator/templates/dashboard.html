@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ admin }} Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}" />
+    <script src="{% static 'js/admin_dashboard.js' %}"></script>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>Admin</h3>
+      <h3>Vaccination Center Management Console</h3>
+      <a href="./" onclick="logout()" style="text-decoration: none; color: white;"><h3 style="cursor: pointer;">Logout</h3></a>
+    </div>
+    Here are the list of available Vaccination Centers
+    <br>
+    {% for id, detail in data.items %}
+    <div id="content">
+      <div class="hospital-detail">
+        <div style="min-width: 20%">
+          <h3>Center Code: {{id}}</h3>
+        </div>
+        <div class="detail">
+          <div>
+            <h5>{{detail.Name}}</h5>
+            <h5>{{detail.Location}}</h5>
+            <h5>Vaccine Name: {{detail.VaccineName}}</h5>
+            <h5>Available Doses: {{detail.AvailableDose}}</h5>
+          </div>
+          <div>
+            <h5>Timing: {{detail.OpeningTime}} - {{detail.ClosingTime}}</h5>
+          </div>
+        </div>
+        <div class="buttons">
+            <a href="./edit"><button style="color: green;" onclick="Edit(this)">Update</button></a>
+            <button style="color: red;" onclick="Delete(this)">Delete</button>
+        </div>
+        <br>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+  <form action="" method="post" style="visibility: hidden;">
+  {% csrf_token%}
+  {{form}}
+  <input type="submit">
+  </form>
+</html>

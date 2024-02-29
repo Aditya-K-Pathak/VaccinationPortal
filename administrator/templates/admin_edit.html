@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/admin_edit.css' %}">
+</head>
+
+<body>
+    <form action="" method="POST" style="border:solid white 1px;">
+        <h1>Update Center</h1>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+    </form>
+</body>
+<script src="{% static 'js/admin_edit.js' %}"></script>
+</html>
